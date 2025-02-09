@@ -560,10 +560,6 @@ function handleSubmit() {
 
 <style lang="scss" scoped>
 .home {
-  @media screen and (max-width: $sm) {
-    padding-top: 8em;
-  }
-
   img {
     height: 25vh;
     width: auto;

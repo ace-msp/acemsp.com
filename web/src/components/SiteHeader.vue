@@ -30,6 +30,16 @@ import SiteLogo from './SiteLogo.vue'
 
   .btn-secondary {
     margin: 0 !important;
+
+    @media screen and (max-width: $sm) {
+      display: none;
+    }
+  }
+
+  .flex-row {
+    @media screen and (max-width: $sm) {
+      flex-direction: row;
+    }
   }
 
   .menu {
@@ -37,6 +47,10 @@ import SiteLogo from './SiteLogo.vue'
       color: $white;
       font-size: 1.5em;
       padding: 0.5em 1.5em;
+
+      @media screen and (max-width: $sm) {
+        font-size: 1em;
+      }
 
       &:active,
       &:visited {
