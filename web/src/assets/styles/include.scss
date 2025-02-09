@@ -1,0 +1,224 @@
+@use 'sass:color';
+
+// Colors
+$black: #000000;
+$white: #ffffff;
+
+$attention: #c1121f;
+$background: #fdf0d5;
+$highlight: #669bbc;
+$primary: #003049;
+$secondary: #780000;
+
+// Sizes
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+
+// Mixins
+@mixin button($bg, $fg) {
+  background-color: $bg;
+  border-radius: 0.5em;
+  color: $fg;
+  font-size: 1.5em;
+  margin: 1em 0;
+  padding: 0.75em 2em;
+
+  &:hover {
+    background-color: color.adjust($bg, $lightness: 10%);
+  }
+
+  svg {
+    margin-right: 0.5em;
+  }
+}
+
+@mixin flexbox($direction) {
+  display: flex;
+  flex-direction: $direction;
+  flex-wrap: wrap;
+
+  @media screen and (max-width: $sm) {
+    flex-direction: column;
+  }
+}
+
+// Classes
+.bg {
+  &-attention {
+    background-color: $attention !important;
+    color: $white !important;
+  }
+
+  &-background {
+    background-color: $background !important;
+    color: $black !important;
+  }
+
+  &-highlight {
+    background-color: $highlight !important;
+    color: $white !important;
+  }
+
+  &-primary {
+    background-color: $primary !important;
+    color: $white !important;
+  }
+
+  &-secondary {
+    background-color: $secondary !important;
+    color: $white !important;
+  }
+}
+
+.btn {
+  &-primary {
+    @include button($primary, $white);
+  }
+
+  &-secondary {
+    @include button($secondary, $white);
+  }
+}
+
+.card {
+  background-color: $white;
+  border-radius: 1em;
+  color: $black;
+  // filter: drop-shadow(0 0 0.25rem $black);
+  padding: 1em;
+}
+
+.fg {
+  &-attention {
+    color: $attention !important;
+  }
+
+  &-background {
+    color: $background !important;
+  }
+
+  &-highlight {
+    color: $highlight !important;
+  }
+
+  &-primary {
+    color: $primary !important;
+  }
+
+  &-secondary {
+    color: $secondary !important;
+  }
+}
+
+.flex {
+  &-around {
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  &-between {
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &-center {
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-column {
+    @include flexbox(column);
+  }
+
+  &-full {
+    flex: 1;
+  }
+
+  &-gap {
+    gap: 1em;
+  }
+
+  &-row {
+    @include flexbox(row);
+  }
+
+  &-start {
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  &-stretch {
+    align-self: stretch;
+  }
+}
+
+h {
+  &1 {
+    font-size: 3em;
+  }
+
+  &2 {
+    font-size: 2em;
+  }
+
+  &3 {
+    font-size: 1.75em;
+  }
+
+  &4 {
+    font-size: 1.5em;
+  }
+
+  &5 {
+    font-size: 1.25em;
+  }
+}
+
+.mar {
+  &-1 {
+    margin: 1em;
+  }
+
+  &-t {
+    &-1 {
+      margin-top: 1em;
+    }
+  }
+}
+
+.pad {
+  &-1 {
+    padding: 1em;
+  }
+}
+
+.section {
+  max-width: $xl;
+  margin: 0 auto;
+  padding: 4em 0;
+}
+
+.shadow {
+  filter: drop-shadow(0 0 0.5rem $black);
+}
+
+.txt {
+  &-big {
+    font-size: 1.5em;
+  }
+
+  &-bigger {
+    font-size: 2em;
+  }
+
+  &-bold,
+  b {
+    font-weight: bold;
+  }
+
+  &-center {
+    text-align: center;
+  }
+}
