@@ -35,7 +35,10 @@ function handleSubmit() {
   } else if (!formData.name) {
     alert('Please provide a name.')
   } else {
-    console.log(formData)
+    fetch('https://mvbsgew6rgezpc5q6yyzu3uwey0ormiz.lambda-url.us-east-2.on.aws/', {
+      body: JSON.stringify(formData),
+      method: 'POST',
+    })
   }
 }
 </script>
