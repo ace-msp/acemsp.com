@@ -35,7 +35,7 @@ function handleSubmit() {
   } else if (!formData.name) {
     alert('Please provide a name.')
   } else {
-    fetch('https://mvbsgew6rgezpc5q6yyzu3uwey0ormiz.lambda-url.us-east-2.on.aws/', {
+    fetch('https://ajmbr7upsg.execute-api.us-east-2.amazonaws.com/default/acemsp-contact', {
       body: JSON.stringify(formData),
       method: 'POST',
     })
